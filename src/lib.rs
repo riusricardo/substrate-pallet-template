@@ -1,3 +1,7 @@
+#![cfg_attr(not(feature = "std"), no_std)]
+// `construct_runtime!` does a lot of recursion and requires us to increase the limit to 256.
+#![recursion_limit="256"]
+
 /// A pallet template with necessary imports
 
 /// Feel free to remove or edit this file as needed.
@@ -11,7 +15,6 @@
 use frame_support::{decl_module, decl_storage, decl_event, dispatch::DispatchResult};
 use system::ensure_signed;
 
-/// The pallet's configuration trait.
 pub trait Trait: system::Trait {
 	// TODO: Add other types and constants required configure this pallet.
 

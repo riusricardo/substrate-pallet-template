@@ -43,6 +43,12 @@ package = 'pallet-grandpa'
 rev = '3e651110aa06aa835790df63410a29676243fc54'
 version = '2.0.0'
 
+[dependencies.pallet-template]
+default-features = false
+path = '../../'
+package = 'pallet-template'
+version = '2.0.0'
+
 [dependencies.indices]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
@@ -174,6 +180,7 @@ std = [
     'frame-support/std',
     'grandpa/std',
     'indices/std',
+    'pallet-template/std',
     'randomness-collective-flip/std',
     'safe-mix/std',
     'serde',

@@ -240,6 +240,11 @@ impl template::Trait for Runtime {
 	type Event = Event;
 }
 
+impl pallet_template::Trait for Runtime {
+	type Event = Event;
+}
+
+
 construct_runtime!(
 	pub enum Runtime where
 		Block = Block,
@@ -256,6 +261,7 @@ construct_runtime!(
 		Sudo: sudo,
 		// Used for the module template in `./template.rs`
 		TemplateModule: template::{Module, Call, Storage, Event<T>},
+		PalletTemplate: pallet_template::{Module, Call, Storage, Event<T>},
 		RandomnessCollectiveFlip: randomness_collective_flip::{Module, Call, Storage},
 	}
 );

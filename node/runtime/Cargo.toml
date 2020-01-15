@@ -24,6 +24,18 @@ features = ['derive']
 package = 'parity-scale-codec'
 version = '1.0.0'
 
+[dependencies.contracts]
+default_features = false
+git = 'https://github.com/paritytech/substrate.git'
+package = 'pallet-contracts'
+rev = '3e651110aa06aa835790df63410a29676243fc54'
+
+[dependencies.contracts-rpc-runtime-api]
+default-features = false
+git = 'https://github.com/paritytech/substrate.git'
+package = 'pallet-contracts-rpc-runtime-api'
+rev = '3e651110aa06aa835790df63410a29676243fc54'
+
 [dependencies.frame-executive]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
@@ -176,6 +188,8 @@ std = [
     'aura/std',
     'balances/std',
     'codec/std',
+    'contracts/std',
+    'contracts-rpc-runtime-api/std',
     'frame-executive/std',
     'frame-support/std',
     'grandpa/std',
